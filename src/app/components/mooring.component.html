@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+   <div class="panel-heading"><h3>{{ title }}</h3></div>
+   <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <th>Berth</th><th>Boat</th><th>Harbor</th><th>Captain</th><th>Departure</th><td></td>
+      </tr>
+      <tr *ngFor="let moor of moors">
+        <td>{{moor.bridge}}-{{moor.position}}</td>
+        <td>{{moor.boat}}</td>
+        <td>{{moor.harbor}}</td>
+        <td>{{moor.captain}}</td>
+        <td class="text-nowrap">{{moor.departure}}</td>
+        <td>X</td>
+      </tr>
+    </table>
+  </div>
+</div>
