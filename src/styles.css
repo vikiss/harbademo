@@ -1,5 +1,6 @@
 /**/
 body {background-color: #eeeeee;}
-.white-bg{
-    background:#ffffff !important;
-}
+.white-bg{background: #ffffff !important;}
+.green {color: #5cb85c !important;}
+.red {color: #d9534f !important;}
+.bg-Pending {background: #f0ad4e !important;}

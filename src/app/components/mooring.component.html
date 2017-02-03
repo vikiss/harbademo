@@ -5,14 +5,15 @@
       <tr>
         <th>Berth</th><th>Boat</th><th>Harbor</th><th>Captain</th><th>Departure</th><td></td>
       </tr>
-      <tr *ngFor="let moor of moors">
+      <tr *ngFor="let moor of moors | paginate: {itemsPerPage: 10, currentPage:page, id: '2'}; let i = index">
         <td>{{moor.bridge}}-{{moor.position}}</td>
         <td>{{moor.boat}}</td>
         <td>{{moor.harbor}}</td>
         <td>{{moor.captain}}</td>
         <td class="text-nowrap">{{moor.departure}}</td>
-        <td>X</td>
+        <td><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></td>
       </tr>
     </table>
+    <pagination-controls (pageChange)="page = $event" id="2" maxSize="5" directionLinks="true" autoHide="true"></pagination-controls>
   </div>
 </div>

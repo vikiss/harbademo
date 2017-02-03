@@ -12,7 +12,6 @@ import { HelperService } from  '../services/helper.service';
  export class BookingComponent {
   title: string;
   moors:Moor[];
-  
   constructor(private moordataService: MoordataService) {
   this.title = "Reservations";
   this.moordataService.getMoors().subscribe(moors => {

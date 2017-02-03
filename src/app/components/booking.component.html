@@ -5,14 +5,20 @@
       <tr>
         <th>Status</th><th>Arrival</th><th>Departure</th><th>Size</th><th>Price</th><td></td>
       </tr>
-      <tr *ngFor="let moor of moors">
-        <td>{{moor.status}}</td>
+      <tr *ngFor="let moor of moors | paginate: {itemsPerPage: 10, currentPage:page, id: '1'}; let i = index">   
+        <td><button type="button" class="btn btn-sm bg-{{moor.status}}">{{moor.status}}</button></td>
         <td class="text-nowrap">{{moor.arrival}}</td>
         <td class="text-nowrap">{{moor.departure}}</td>
         <td>{{moor.size}} {{moor.sizeunit}}</td>
         <td>{{moor.currency}} {{moor.price}}</td>
-        <td>X</td>
+        <td class="text-right"><span *ngIf="moor.status == 'Pending'">
+          <span class="glyphicon glyphicon-ok green" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-remove red" aria-hidden="true"></span>
+            </span>
+            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+        </td>
       </tr>
     </table>
+    <pagination-controls (pageChange)="page = $event" id="1" maxSize="5" directionLinks="true" autoHide="true"></pagination-controls>
   </div>
 </div>
